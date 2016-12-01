@@ -21,6 +21,12 @@ function handle(e) {
          Go GC <input type="text" name="goGC" value="100"><br>
          Limit <input type="text" name="limit" value="8000"><br>
          Non-heap memory <input type="text" name="nonHeap" value="2000"><br>
+         In use Heap MB (in steady state) <input type="text" name="inUseHeap" value="2000"><br>
+         Peak In use Heap MB (e.g: cache bloat)  <input type="text" name="cacheBloat" value="4000"><br>
+
+         Garbage generated per interval, in MB (in steady state) <input type="text" name="garbageMbps" value="100"><br>
+         Peak Garbage generated per interval (when snake is swallowing an elephant) <input type="text" name="elephant" value="300"><br>
+
      </form>
      <button onclick="redraw();">Update</button>
 

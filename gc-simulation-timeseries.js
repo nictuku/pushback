@@ -2,16 +2,18 @@ var redraw = function() {
   var goGC = Number(document.getElementsByName("goGC")[0].value);
   var limit = Number(document.getElementsByName("limit")[0].value);
   var extra = Number(document.getElementsByName("nonHeap")[0].value);
-  
+  var garbageMbps = Number(document.getElementsByName("garbageMbps")[0].value); 
+  var inUseHeap = Number(document.getElementsByName("inUseHeap")[0].value);
+  var elephant = Number(document.getElementsByName("elephant")[0].value);
+  var cacheBloat = Number(document.getElementsByName("cacheBloat")[0].value);
+
   var xLength = 1000;
   var timeXVals = [...Array(xLength).keys()];
   var extraMemoryVals = [...Array(xLength).fill(extra)];
-  var inUseHeapMBVals = [...Array(xLength).fill(2000)];
+  var inUseHeapMBVals = [...Array(xLength).fill(inUseHeap)];
   
-  var garbageMbpsVals = Array(xLength).fill(100);
+  var garbageMbpsVals = Array(xLength).fill(garbageMbps);
   
-  var elephant = 300;
-  var cacheBloat = 4000;
   var crazyPeriods = [{
       x: 50,
       duration: 150,
