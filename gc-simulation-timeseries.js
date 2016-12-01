@@ -77,7 +77,7 @@ var redraw = function() {
         x: timeXVals,
         y: extraMemoryVals,
         line: {
-            color: "rgb(0,0,255)"
+            color: "yellow",
         },
         mode: "lines",
         name: "Non-heap Memory Usage",
@@ -152,7 +152,7 @@ var redraw = function() {
     console.log("memoryUsageNew", memoryUsageNew);
 
     var data = [
-        memoryUsage, memLimit, memoryUsageNew, inUseHeapMBVals,
+        memoryUsage, memLimit, memoryUsageNew, inUseHeapMBVals, extraMemory,
     ];
 
     var annotationFunc = function() {
