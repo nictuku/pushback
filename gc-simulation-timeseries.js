@@ -1,8 +1,8 @@
-//var goGC = 100;
 var extra = 2000;
-var limit = 8000;
 
-var goGC = document.getElementsByName("goGC")[0].value;
+var goGC = Number(document.getElementsByName("goGC")[0].value);
+var limit = Number(document.getElementsByName("limit")[0].value);
+var extra = Number(document.getElementsByName("nonHeap")[0].value);
 
 var xLength = 1000;
 var timeXVals = [...Array(xLength).keys()];
