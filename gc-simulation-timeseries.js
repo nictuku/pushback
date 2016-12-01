@@ -1,7 +1,8 @@
-var goGC = 100;
-// values in MB
+//var goGC = 100;
 var extra = 2000;
 var limit = 8000;
+
+var goGC = document.getElementsByName("goGC")[0].value;
 
 var xLength = 1000;
 var timeXVals = [...Array(xLength).keys()];
@@ -142,14 +143,6 @@ var data = [
 ];
 
 var annotationFunc = function() {
-    /*
-	{
-      x: 600,
-		duration: 150,
-		garbageMbps: elephant,
-		inUseHeapMB: cacheBloat,
-	 }
-	 */
     return crazyPeriods.map(function(p) {
         var text = []
         if (p.garbageMbps) {
@@ -200,10 +193,12 @@ var layout = {
         ticks: "outside",
         zeroline: false,
         title: "Peak Container Memory Usage",
-        //tick0: 0,
-        //dtick: 1,
     },
     annotations: annotationFunc(),
 };
+
+var redraw = function() {
+Plotly.newPlot("myDiv", data, layout);
+}
 
 Plotly.newPlot("myDiv", data, layout);
