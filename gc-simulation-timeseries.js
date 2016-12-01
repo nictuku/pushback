@@ -136,11 +136,23 @@ var redraw = function() {
       name: "NewGC Memory usage",
       type: "scatter"
   };
+
+  var inUseHeapMBVals = {
+      x: timeXVals,
+      y: inUseHeapMBVals,
+      line: {
+          color: "brown"
+      },
+      mode: "lines",
+      name: "In Use Heap",
+      type: "scatter"
+  };
+  
   
   console.log("memoryUsageNew", memoryUsageNew);
   
   var data = [
-      memoryUsage, memLimit, memoryUsageNew,
+      memoryUsage, memLimit, memoryUsageNew, inUseHeapMBVals,
   ];
   
   var annotationFunc = function() {
